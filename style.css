@@ -804,3 +804,223 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* ================= ART MUNS MODAL ================= */
+.modal-container.modal-artmuns {
+  max-width: 980px !important;
+  width: 90% !important;
+  max-height: 90vh !important;
+  padding: 45px 24px 16px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  box-sizing: border-box !important;
+}
+
+.artmuns-layout {
+  display: grid !important;
+  grid-template-columns: 1fr 1.3fr 1.2fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+  height: 62vh !important;
+  max-height: 520px !important;
+  min-height: 0 !important; /* สำคัญมาก: ป้องกันไม่ให้ภาพดัน Layout ทะลุ */
+}
+
+.artmuns-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+/* คุมการ์ดรูปภาพทั้งหมดให้อยู่ในกรอบ */
+.artmuns-col .modal-img-card {
+  width: 100% !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background-color: #111111 !important;
+  position: relative !important;
+  min-height: 0 !important;
+}
+
+.artmuns-col .modal-img-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* สัดส่วนคอลัมน์ซ้าย */
+.artmuns-col.col-left .tall-card-top {
+  height: 60% !important;
+}
+.artmuns-col.col-left .modal-img-card:last-child {
+  height: 40% !important;
+}
+
+/* สัดส่วนคอลัมน์กลาง */
+.artmuns-col.col-center .modal-img-card {
+  flex: 1 1 0 !important;
+}
+
+/* สัดส่วนคอลัมน์ขวา */
+.artmuns-col.col-right .modal-img-card:first-child {
+  height: 40% !important;
+}
+.artmuns-col.col-right .tall-card-bottom {
+  height: 60% !important;
+}
+
+/* กล่องลิงก์ด้านล่างสุด ชิดขวา ไม่ทับรูป */
+.artmuns-footer {
+  position: static !important; /* บังคับให้อยู่ใต้รูป ไม่ลอยทับ */
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  padding-top: 4px !important;
+  z-index: 10 !important;
+}
+
+.artmuns-footer a {
+  font-size: 13px !important;
+  color: #ffffff !important;
+  opacity: 0.8 !important;
+  text-decoration: none !important;
+}
+
+.artmuns-footer a:hover {
+  opacity: 1 !important;
+  text-decoration: underline !important;
+}
+
+/* โหมดมือถือ */
+@media (max-width: 768px) {
+  .modal-container.modal-artmuns {
+    max-height: none !important;
+    height: auto !important;
+  }
+  .artmuns-layout {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+  .artmuns-col {
+    height: auto !important;
+  }
+  .artmuns-col .modal-img-card {
+    height: 220px !important;
+  }
+  .artmuns-footer {
+    justify-content: center !important;
+  }
+}
+/* ================= ART MUNS MODAL ================= */
+.modal-container.modal-artmuns {
+  max-width: 1000px !important;
+  width: 90% !important;
+  max-height: 90vh !important;
+  padding: 48px 24px 16px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.artmuns-layout {
+  display: grid !important;
+  grid-template-columns: 1fr 1.3fr 1.2fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+  height: 62vh !important;
+  max-height: 520px !important;
+  min-height: 0 !important;
+}
+
+.artmuns-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+.artmuns-col .modal-img-card {
+  width: 100% !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background-color: #111111 !important;
+}
+
+.artmuns-col .modal-img-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* สัดส่วนคอลัมน์ซ้าย */
+.artmuns-col.col-left .tall-card-top {
+  height: 60% !important;
+}
+.artmuns-col.col-left .modal-img-card:last-child {
+  height: 40% !important;
+}
+
+/* สัดส่วนคอลัมน์กลาง */
+.artmuns-col.col-center .modal-img-card {
+  flex: 1 1 0 !important;
+}
+
+/* สัดส่วนคอลัมน์ขวา */
+.artmuns-col.col-right .modal-img-card:first-child {
+  height: 40% !important;
+}
+.artmuns-col.col-right .tall-card-bottom {
+  height: 60% !important;
+}
+
+/* Footer ชิดขวาล่าง */
+.artmuns-footer {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  padding-top: 6px !important;
+}
+
+.artmuns-footer a {
+  font-size: 13px !important;
+  color: #ffffff !important;
+  opacity: 0.8 !important;
+  text-decoration: none !important;
+}
+
+.artmuns-footer a:hover {
+  opacity: 1 !important;
+  text-decoration: underline !important;
+}
+
+/* โหมดมือถือ */
+@media (max-width: 768px) {
+  .modal-container.modal-artmuns {
+    max-height: none !important;
+    height: auto !important;
+  }
+  .artmuns-layout {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+  .artmuns-col {
+    height: auto !important;
+  }
+  .artmuns-col .modal-img-card {
+    height: 220px !important;
+  }
+  .artmuns-footer {
+    justify-content: center !important;
+  }
+}

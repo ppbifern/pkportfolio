@@ -90,7 +90,9 @@
       <div class="grid-item col-6" onclick="openModal2()" style="cursor: pointer;">
         <img src="img work/blender/coin.png" alt="ITCAMP Project" />
       </div>
-
+      <div class="grid-item col-12 hero-banner" onclick="openModalArtMuns()" style="cursor: pointer;">
+        <img src="img work/AM/4-5poster post.jpg" alt="ART MUNS Event" />
+      </div>
       <div class="grid-item col-4" onclick="openModal3()" style="cursor: pointer;">
         <img src="img work/PS2.png" alt="Art Project 3" />
       </div>
@@ -298,8 +300,72 @@
       }
     }
   </script>
-</body>
-</html>
+<div id="projectModalArtMuns" class="modal-overlay" onclick="closeModalArtMuns(event)">
+  <div class="modal-container modal-artmuns" onclick="event.stopPropagation()">
+    <button class="modal-close-btn" onclick="closeModalDirectArtMuns()">&times;</button>
+    <!-- ปุ่มกดเปิดคำอธิบาย -->
+    <button class="desc-toggle-btn" onclick="toggleDescription('descBoxArtMuns')">
+      Art Muns
+    </button>
+
+    <!-- กล่องข้อความคำอธิบาย (จะเด้งออกมาพอกดปุ่ม) -->
+    <div id="descBoxArtMuns" class="modal-desc-panel">
+      <p class="desc-en">
+        Served as part of the core committee for the department's ART MUNS exhibition, taking on the role of Sponsorship Coordinator to secure sponsorships and partnerships for the event
+      </p>
+      <p class="desc-th">
+        ร่วมเป็นส่วนหนึ่งของทีมผู้จัดนิทรรศการประจำสาขา ART MUNS โดยรับผิดชอบในการจัดหาและประสานงานกับผู้สนับสนุน
+      </p>
+    </div>
+    
+    <!-- 1. ส่วนจัดแสดงรูปภาพทั้งหมด -->
+    <div class="artmuns-layout">
+      <!-- คอลัมน์ซ้าย (2 รูป) -->
+      <div class="artmuns-col col-left">
+        <div class="modal-img-card tall-card-top">
+          <img src="img work/AM/KMN_9358.jpg" alt="Art Muns Stage Crowd" />
+        </div>
+        <div class="modal-img-card">
+          <img src="img work/AM/DSC09040.JPG" alt="Art Muns Area" />
+        </div>
+      </div>
+
+      <!-- คอลัมน์กลาง (3 รูป) -->
+      <div class="artmuns-col col-center">
+        <div class="modal-img-card">
+          <img src="img work/AM/DSC09242.JPG" alt="Art Muns Installation 1" />
+        </div>
+        <div class="modal-img-card">
+          <img src="img work/AM/DSC09371.JPG" alt="Art Muns Workshop" />
+        </div>
+        <div class="modal-img-card">
+          <img src="img work/AM/P1054915.jpg" alt="Art Muns Team" />
+        </div>
+      </div>
+
+      <!-- คอลัมน์ขวา (2 รูป) -->
+      <div class="artmuns-col col-right">
+        <div class="modal-img-card">
+          <img src="img work/AM/KMN_0001.jpg" alt="Art Muns Exhibition Area" />
+        </div>
+        <div class="modal-img-card tall-card-bottom">
+          <img src="img work/AM/P1054775.jpg" alt="Art Muns Arch Gate" />
+        </div>
+      </div>
+    </div> <!-- ปิด artmuns-layout ให้เรียบร้อยตรงนี้ -->
+
+    <!-- 2. ส่วนลิงก์ด้านล่าง (จะอยู่ใต้รูปเสมอ และชิดขวาตามต้นฉบับ) -->
+    <div class="modal-footer artmuns-footer">
+      <a href="https://www.instagram.com/artmuns2026/" target="_blank">
+        https://www.instagram.com/artmuns2026/
+      </a>
+    </div>
+
+  </div> <!-- ปิด modal-artmuns -->
+  </div> <!-- 👈 เติมตัวนี้เพื่อปิด #projectModalArtMuns -->
+
+  <div id="projectModal3" class="modal-overlay" onclick="closeModal3(event)">
+
 <div id="projectModal3" class="modal-overlay" onclick="closeModal3(event)">
   <div class="modal-container modal-single" onclick="event.stopPropagation()">
     <button class="modal-close-btn" onclick="closeModalDirect3()">&times;</button>
@@ -947,6 +1013,27 @@ function closeModalDirect9() {
     if (descBox) {
       descBox.classList.remove('is-visible');
     }
+  }
+}
+function openModalArtMuns() {
+  const modal = document.getElementById('projectModalArtMuns');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeModalArtMuns(event) {
+  if (event.target.id === 'projectModalArtMuns') {
+    closeModalDirectArtMuns();
+  }
+}
+
+function closeModalDirectArtMuns() {
+  const modal = document.getElementById('projectModalArtMuns');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
   }
 }
 </script>
